@@ -1,0 +1,41 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__logo {
+        width: 250px;
+        img{
+            width: 100%;
+        }
+    }
+    &__official {
+        color: #ffffff;
+        font-family: "Museo Sans Cyrl -500";
+        font-size: 12px;
+        font-weight: 400;
+        text-align: center;
+        span {
+            font-family: "Museo Sans Cyrl -700";
+            font-size: 18px;
+            font-weight: 400; 
+            display: block;
+        }
+    }
+    &__phone {
+        color: #ffffff;
+        font-family: "Museo Sans Cyrl -700";
+        font-size: 22px;
+        font-weight: 700;
+        text-decoration: none;
+        display: block;
+        &:hover {
+            color: white;
+        }
+    } 
+    &__contacts {
+        flex-direction: column;
+        display: flex;
+        align-items: flex-end;
+        
+    }  
+}
