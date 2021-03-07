@@ -66,6 +66,84 @@ $(document).ready(function(){
          toggleSlide('.catalog-item__link');
          toggleSlide ('.catalog-item__back');
       
+      //MODAL
       
-  });
+      $('[data-modal=consultation]').on('click', function() {
+        $('.overlay,#consultation').fadeIn('slow');
+           
+      });
+
+       $('.modal__close').on('click', function(){
+        $('.overlay, #consultation,#thanks, #order').fadeOut('slow');
+
+       });
+
+     
+       
+
+       $('.catalog-item__btn').each(function(i){
+       $(this).on('click',function(){
+          $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
+          $('.overlay,#order').fadeIn('slow');
+       });
+
+      });
+    
+
+      //  $('.feed-form').validate(); 
+      //  $('#consultation form').validate({
+      //     rules:{
+      //         name: "required",  
+      //         phone: "required",
+      //         email: {
+      //                required: true,
+      //                email: true
+
+      //         }     
+      //         },
+
+      //         messages: {
+      //           name: "Please specify your name",
+      //           email: {
+      //             required: "We need your email address to contact you",
+      //             email: "Your email address must be in the format of name@domain.com"
+      //           }
+      //         }
+      //     });
+
+      //  $('#order form').validate();
+
+       function valideForms(form) {
+             
+
+        $(form).validate({
+          rules:{
+              name: "required",  
+              phone: "required",
+              email: {
+                     required: true,
+                     email: true
+
+              }     
+              },
+
+              messages: {
+                name: "Please specify your name",
+                email: {
+                  required: "We need your email address to contact you",
+                  email: "Your email address must be in the format of name@domain.com"
+                }
+              }
+          });
+       }
+
+
+       valideForms('#order form');
+       valideForms('.feed-form');
+       valideForms('#consultation form');
+      
+      
+        
+    });
+ 
  
